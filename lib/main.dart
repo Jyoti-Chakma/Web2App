@@ -2,23 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  late WebViewController _controller;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Web2App',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Web2App'),
+          title: const Text('Jum Academy'),
+          centerTitle: true,
         ),
-        body: const SafeArea(
-          child: Text("Hello"),
-        )
+        body: Center(
+          child: WebView(
+            initialUrl: 'https://www.jumacademy.com/',
+            javascriptMode: JavascriptMode.unrestricted,
+            onWebViewCreated: (WebViewController webViewController) {
+              _controller = webViewController;
+            },
+          ),
+        ),
       ),
     );
   }
