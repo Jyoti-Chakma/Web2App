@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Jum Academy'),
+          title: const Text('Jum Academy', style: TextStyle(color: Colors.black),),
           centerTitle: true,
+          backgroundColor: Colors.blue,
+          elevation: 0.0,
         ),
         body: Center(
           child: WebView(
