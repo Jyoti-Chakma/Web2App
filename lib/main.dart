@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Web2App'),
         ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+        body: const SafeArea(
+          child: Text("Hello"),
+        )
       ),
     );
   }
